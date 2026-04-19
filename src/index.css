@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #05060A;
+  color: #F5F5F7;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0, 229, 255, 0.12), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 100% 50%, rgba(255, 46, 196, 0.08), transparent 60%),
+    #05060A;
+}
+
+/* Hide default cursor on desktop pointer devices */
+@media (pointer: fine) {
+  html,
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+}
+
+/* Selection */
+::selection {
+  background: #00E5FF;
+  color: #05060A;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Scrollbar (for mobile / reduce motion fallback) */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Canvas inherits no cursor styles */
+canvas {
+  touch-action: none;
+  outline: none;
+}
